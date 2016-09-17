@@ -98,7 +98,24 @@ public class Polinomio {
 		}else{
 			resultado = x * potenciaPar(x, n-1);
 			return resultado;
+		}		
+	}
+	public double evaluarProgDinamica(double x){
+		double resultado = this.coeficiente[this.grado];
+		double aux = 1;
+		for(int i = this.grado - 1; i >= 0; i--){
+			aux *= x;
+			resultado += aux * this.coeficiente[i];
 		}
+		return resultado;
+	}
+
+	public double evaluarPow(double X){
+		double resultado = this.coeficiente[this.grado];
 		
+		for (int i = 0; i < coeficiente.length - 1; i++) {
+			resultado += this.coeficiente[i] * Math.pow(X, this.grado - i);
+		}
+		return resultado;
 	}
 }
