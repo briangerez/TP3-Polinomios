@@ -118,4 +118,14 @@ public class Polinomio {
 		}
 		return resultado;
 	}
+	
+	public double evaluarHorner(double X){
+		double resultado=this.coeficiente[0];
+		
+		for (int i = 0; i < coeficiente.length - 1; i++) {
+			resultado *= X;
+			resultado += this.coeficiente[i + 1];
+		}
+		return resultado;
+	}
 }
